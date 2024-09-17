@@ -89,6 +89,7 @@ const Carousel = () => {
                              style={{ filter: 'drop-shadow(10px 15px 8px rgba(0, 0, 0, 0.3))' }}
                         />
                       </div>
+                      
                     </>
                   )}
                 </div>
@@ -110,3 +111,4 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
