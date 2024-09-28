@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { Bars3Icon } from '@heroicons/react/24/outline';
 
 export function NavBar() {
@@ -13,14 +14,14 @@ export function NavBar() {
   };
 
   const links = [
-    { name: 'Home', path: 'home' },
-    { name: 'Products', path: 'products' },
-    { name: 'About Us', path: 'about' },
-    { name: 'Contact Us', path: 'contact' },
+    { name: 'Home', path: '/' },
+    { name: 'Products', path: '/products' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
   return (
-    <>
+    <div className='z-20'>
       {/* Navbar for screens above 700px */}
       <div className='hidden sm:flex w-full h-[100px] bg-[#f9f4ea] justify-between md:px-20 px-10 items-center shadow-md'>
         <div className='logowithName flex gap-2 items-center'>
@@ -29,7 +30,9 @@ export function NavBar() {
         </div>
         <div className='options flex gap-10 items-center'>
           {links.map(link => (
-            <div key={link.path}>{link.name}</div>
+            <Link key={link.path} to={link.path} className="hover:text-[#DD9356] transition-colors duration-300">
+              {link.name}
+            </Link>
           ))}
         </div>
       </div>
@@ -53,9 +56,9 @@ export function NavBar() {
             <p className="font-bold text-xl">Herfy</p>
           </div>
           {links.map(link => (
-            <div key={link.path} className="flex items-center gap-3 w-full h-[40px] px-4" onClick={closeSidebar}>
-              <p>{link.name}</p>
-            </div>
+            <Link key={link.path} to={link.path} className="flex items-center gap-3 w-full h-[40px] px-4 hover:bg-[#DD9356] hover:text-white transition-colors duration-300" onClick={closeSidebar}>
+              {link.name}
+            </Link>
           ))}
         </div>
       </div>
@@ -64,6 +67,6 @@ export function NavBar() {
       {openSidebar && (
         <div onClick={closeSidebar} className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-md z-40 transition-opacity duration-300 ease-in-out"></div>
       )}
-    </>
+    </div>
   );
 }

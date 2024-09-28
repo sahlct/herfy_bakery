@@ -1,57 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { Galleria } from 'primereact/galleria';
+import React, { useState } from 'react';
+
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import Chocolate from './chocolate';
+import Pinaple from './pinaple';
 
 export default function BreadOfTheDay() {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    setImages([
-      { itemImageSrc: '/assets/IMG_9613.JPG', alt: 'Cake 1' },
-      { itemImageSrc: '/assets/IMG_9629.JPG', alt: 'Cake 2' },
-      { itemImageSrc: '/assets/IMG_9637.JPG', alt: 'Cake 3' },
-      { itemImageSrc: '/assets/IMG_9631.JPG', alt: 'Cake 4' }
-    ]);
-  }, []);
-
-  const itemTemplate = (item) => {
-    return <img className='md:rounded-lg' src={item.itemImageSrc} alt={item.alt} style={{ width: '400px', height: '400px', objectFit: 'cover' }} />;
-  }
+  // const [product,setProduct ] = useState("Chocolate");
+  const [activeButton,setActiveButton ] = useState("Chocolate Cake");
+ 
 
   return (
     <div className="md:py-20 py-10 font-lato">
-      <h1 className="font-bold font-josefin" style={{ fontSize: 'clamp(25px, 3vw, 40px)' }}>Cake of the Day</h1>
+      <h1 className="font-bold font-josefin" style={{ fontSize: 'clamp(25px, 3vw, 40px)' }}>Our Products</h1>
       <p className="font-josefin text-gray-500">DELIVERING TO YOUR DOOR</p>
+
+      <div className="main p-4 font-josefin">
+
+      <div className="sinceContainer w-full">
+        <div className="buttons flex sm:justify-center justify-start space-x-4 mb-4 overflow-x-auto scrollbar-hidden">
+          <button
+            className={`py-1 px-4 text-xl md:text-2xl md:font-bold ms-0 whitespace-nowrap ${activeButton === 'Chocolate Cake' ? ' text-yellow-500 ' : 'text-gray-500'}`}
+            onClick={() => setActiveButton('Chocolate Cake')}
+          >
+            Chocolate Cake
+          </button>
+          <button
+            className={`py-1 px-4 text-xl md:text-2xl !ms-0 md:font-bold whitespace-nowrap ${activeButton === 'Pinapple Cake' ? ' text-yellow-500 ' : 'text-gray-500'}`}
+            onClick={() => setActiveButton('Pinapple Cake')}
+          >
+            Pinaple Cake
+          </button>
       
-      {/* Responsive layout */}
-      <div className="w-full flex flex-col md:flex-row mt-10">
-        
-        {/* PrimeReact Galleria */}
-        <div className="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0">
-          <Galleria 
-            value={images} 
-            numVisible={1} 
-            circular 
-            style={{ maxWidth: '400px' }}
-            showThumbnails={false} 
-            showItemNavigators 
-            item={itemTemplate} 
-          />
         </div>
 
-        {/* Text section */}
-        <div className="w-full md:w-1/2 flex flex-col px-5 md:px-20">
-          <h1 className="md:mb-10 mb-5 text-left font-bold md:font-normal" style={{ fontSize: 'clamp(20px, 3vw, 35px)' }}>Chocolate Sponge Cake</h1>
-          <p className="text-left mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus adipisci, harum assumenda eligendi nam perferendis unde id quam eius, sequi necessitatibus obcaecati inventore fugit dignissimos consequuntur! Ipsum eos asperiores numquam.</p>
-          <p className="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, eum distinctio corrupti nostrum deserunt esse fugit error quo?</p>
-          <p className="mt-5 text-left text-xl">Only Today: <strike className="text-gray-600 font-semibold ms-5">$39</strike><span className="font-bold ms-5 text-2xl">$29</span></p>
-          <button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
-            ORDER NOW
-          </button>
-        </div>
       </div>
+    </div>
+      {
+          activeButton === "Chocolate Cake" ?
+
+          <Chocolate/> : <Pinaple/>
+
+      }
+      
+     
+
     </div>
   );
 }
