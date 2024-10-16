@@ -38,7 +38,7 @@ export function NavBar() {
       </div>
 
       {/* Sidebar and Menu Icon for screens below 700px */}
-      <div className="flex sm:hidden fixed top-0 w-full h-[60px] bg-[#f9f4ea] items-center justify-between px-5 z-40 shadow-md">
+      <div className="flex sm:hidden sticky top-0 w-full h-[60px] bg-[#f9f4ea] items-center justify-between px-5 z-40 shadow-md">
         <div className="logowithName flex gap-2 items-center">
           <img src="/assets/logo.png" alt="Logo" className='h-[50px] w-[50px]' />
           <p className='font-bold font-josefin text-xl'>Herfy</p>
