@@ -3,11 +3,46 @@ import React from 'react';
 export default function CakeTouch() {
     return (
         <div className='bg-[#f9f4ea] w-full h-auto py-10'>
+            {/* Internal CSS */}
+            <style>
+                {`
+                    .half-border-box {
+                        border-radius: 64% 36% 37% 63% / 35% 65% 35% 65%;
+                        background-color: transparent;
+                    }
+
+                    /* Top-left and bottom-right border using pseudo-elements */
+                    .half-border-box::before,
+                    .half-border-box::after {
+                        content: '';
+                        position: absolute;
+                        border-style: solid;
+                        border-radius: inherit; /* Matches the border-radius */
+                    }
+
+                    /* Top-left half border */
+                    .half-border-box::before {
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-left-width: 8px;
+                        border-top-width: 4px;
+                        border-left-color: gary;
+                        border-top-color: gary;
+                    }
+
+                    
+                `}
+            </style>
+
             <div className='w-full h-full flex flex-col-reverse md:flex-row' style={{ backdropFilter: 'blur(2px)' }}>
                 {/* Form Section */}
                 <form action="" className="w-full md:w-1/2 h-full px-10 py-10 flex flex-col">
                     <h1 className='font-lato text-2xl font-bold mb-5 mt-5 md:mt-0'>Get in Touch</h1>
-                    <p className='text-base font-light text-start mb-5'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus unde alias distinctio explicabo vitae dolores expedita dicta, illo doloribus reiciendis vel asperiores commodi dolore sunt, sit porro eum eius in?</p>
+                    <p className='text-base font-light text-start mb-5'>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus unde alias distinctio explicabo vitae dolores expedita dicta, illo doloribus reiciendis vel asperiores commodi dolore sunt, sit porro eum eius in?
+                    </p>
                     <input
                         type="text"
                         placeholder="Name"
@@ -28,56 +63,15 @@ export default function CakeTouch() {
                 </form>
 
                 {/* Gallery Section */}
-                <div className="gallery w-full md:w-1/2 flex justify-center items-center px-10 py-10 !m-0">
-                    <img src="/assets/IMG_9617.JPG" alt="Cake 1" className='w-[90px] md:w-[170px]' />
-                    <img src="/assets/IMG_9620.JPG" alt="Cake 2" className='w-[90px] md:w-[170px]' />
-                    <img src="/assets/IMG_9618.JPG" alt="Cake 3" className='w-[90px] md:w-[170px]' />
-                    <img src="/assets/IMG_9629.JPG" alt="Cake 4" className='w-[90px] md:w-[170px]' />
-                    <img src="/assets/IMG_9639.JPG" alt="Cake 5" className='w-[90px] md:w-[170px]' />
-                    <img src="/assets/IMG_9641.JPG" alt="Cake 6" className='w-[90px] md:w-[170px]' />
-                    <img src="/assets/IMG_9641.JPG" alt="Cake 7" className='w-[90px] md:w-[170px]' />
+                <div className="gallery w-full min-h-[250px] md:w-1/2 flex justify-center items-center md:px-10 px-5 py-10 !m-0">
+                    <div className='bg-amber-100 lg:h-[400px] lg:w-[400px] shadow-lg' style={{ borderRadius: '64% 36% 37% 63% / 35% 65% 35% 65%' }}></div>
+                    <div className='half-border-box absolute lg:h-[400px] lg:w-[400px] w-[300px] h-[250px] flex flex-col justify-center items-center'>
+                        <img src="/assets/thutt.png" alt="" className='w-full'  style={{ filter: 'drop-shadow(10px 20px 20px rgba(0, 0, 0, 0.5))' }} />
+                        <p className='font-josefin'>"Cake is a happiness"
+                        </p>
+                    </div>
                 </div>
             </div>
-            <style jsx>{`
-                .gallery {
-                    --s: 150px;
-                    --g: 10px;
-                    display: grid;
-                    margin: calc(var(--s) + var(--g));
-                }
-                .gallery > img {
-                    grid-area: 1/1;
-                    // width: 170px;
-                    aspect-ratio: 1.15;
-                    object-fit: cover;
-                    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-                    transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
-                    cursor: pointer;
-                    transition: .2s linear;
-                }
-                .gallery > img:hover {
-                    z-index: 1;
-                    --_t: 1.2;
-                }
-                .gallery > img:first-child {
-                    --_y: calc(-100% - var(--g));
-                }
-                .gallery > img:nth-child(7) {
-                    --_y: calc(100% + var(--g));
-                }
-                .gallery > img:nth-child(3), .gallery > img:nth-child(5) {
-                    --_x: calc(-75% - .87*var(--g));
-                }
-                .gallery > img:nth-child(4), .gallery > img:nth-child(6) {
-                    --_x: calc(75% + .87*var(--g));
-                }
-                .gallery > img:nth-child(3), .gallery > img:nth-child(4) {
-                    --_y: calc(-50% - .5*var(--g));
-                }
-                .gallery > img:nth-child(5), .gallery > img:nth-child(6) {
-                    --_y: calc(50% + .5*var(--g));
-                }
-            `}</style>
         </div>
-    )
+    );
 }

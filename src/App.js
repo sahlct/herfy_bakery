@@ -1,13 +1,11 @@
-// import logo from './logo.svg';
 import "./App.css";
-import BreadOfTheDay from "./pages/breadDay";
-import CakeTouch from "./pages/CakeTouch";
-import HomeAbout from "./pages/HomeAbout";
 import HomePage from "./pages/homepage";
-// import { NavBar } from './pages/navbar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { NavBar } from './pages/navbar';
 import { NavBar } from "./pages/navbar";
+import Products from "./pages/products";
+import GalleryPage from "./pages/galleryPage";
+import AboutPage from "./pages/aboutPage";
+import ContactPage from "./pages/contactPage";
 
 function App() {
   return (
@@ -17,9 +15,10 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<HomeAbout />} />
-          <Route path="/products" element={<BreadOfTheDay />} />
-          <Route path="/contact" element={<CakeTouch />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Router>
     </div>

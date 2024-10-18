@@ -4,7 +4,7 @@ import './footer.css'
 export default function Footer() {
     return (
         <div className='w-full bg-[#22202e] h-min flex flex-col items-center'>
-            <img src="/assets/logo.png" alt="" className='w-[150px] h-[150px]' />
+            <img src="/assets/logo.png" alt="" className='w-[100px] h-[100px] md:h-[150px] md:w-[150px]' />
             <div>
                 <ul class="example-2">
                     <li class="icon-content">

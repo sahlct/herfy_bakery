@@ -6,6 +6,7 @@ import "primeicons/primeicons.css";
 
 export default function Pinapple() {
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
     setImages([
@@ -14,10 +15,20 @@ export default function Pinapple() {
       { itemImageSrc: "/assets/IMG_9624.JPG", alt: "Cake 3" },
       { itemImageSrc: "/assets/IMG_9641.JPG", alt: "Cake 4" },
     ]);
+
+    // Simulate image loading delay
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
   }, []);
 
   const itemTemplate = (item) => {
-    return (
+    return loading ? (
+      // Placeholder with shimmer effect
+      <div
+        className="shimmer rounded-lg"
+        style={{ width: "400px", height: "400px", objectFit: "cover" }}
+      ></div>
+    ) : (
       <img
         className="md:rounded-lg"
         src={item.itemImageSrc}
@@ -29,7 +40,6 @@ export default function Pinapple() {
 
   return (
     <div className="w-full flex flex-col md:flex-row mt-10">
-      {/* PrimeReact Galleria */}
       <div className="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0">
         <Galleria
           value={images}
@@ -42,13 +52,12 @@ export default function Pinapple() {
         />
       </div>
 
-      {/* Text section */}
       <div className="w-full md:w-1/2 flex flex-col px-5 md:px-20">
         <h1
           className="md:mb-10 mb-5 text-left font-bold md:font-normal"
           style={{ fontSize: "clamp(20px, 3vw, 35px)" }}
         >
-          Pinaple Sponge Cake
+          Pinapple Sponge Cake
         </h1>
         <p className="text-left mb-2">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
@@ -60,11 +69,6 @@ export default function Pinapple() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
           eum distinctio corrupti nostrum deserunt esse fugit error quo?
         </p>
-        {/* <p className="mt-5 text-left text-xl">
-          Only Today:{" "}
-          <strike className="text-gray-600 font-semibold ms-5">$39</strike>
-          <span className="font-bold ms-5 text-2xl">$29</span>
-        </p> */}
         <button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
           ORDER NOW
         </button>
