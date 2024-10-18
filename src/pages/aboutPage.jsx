@@ -5,7 +5,7 @@ import WhyChoose from './whychoose'
 
 export default function AboutPage() {
   return (
-    <div className='md:mt-24 mt-16'>
+    <div className='md:mt-24 mt-14'>
         <HomeAbout/>
         <WhyChoose/>
         <Footer/>
