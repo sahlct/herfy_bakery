@@ -39,12 +39,9 @@ export default function Gallery() {
                         <img
                             src={item.imageUrl}
                             alt={item.name}
-                            className={`w-full object-cover ${index === 2 ? 'h-48 lg:h-96' : 'h-48'}`}
+                            className={`w-full object-cover ${index === 2 ? 'h-48 lg:h-full' : 'h-48'}`}
                         />
-                        <div className="px-4 py-2">
-                            <h2 className="text-base font-light mb-2">{item.name}</h2>
-                            {/* <p className="text-gray-600">{item.price}</p> */}
-                        </div>
+                        {/* Removed the <div> containing name and price */}
                     </div>
                 ))}
             </div>

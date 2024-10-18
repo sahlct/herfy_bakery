@@ -67,7 +67,7 @@ export default function CakeTouch() {
                     <div className='bg-amber-100 lg:h-[400px] lg:w-[400px] shadow-lg' style={{ borderRadius: '64% 36% 37% 63% / 35% 65% 35% 65%' }}></div>
                     <div className='half-border-box absolute lg:h-[400px] lg:w-[400px] w-[300px] h-[250px] flex flex-col justify-center items-center'>
                         <img src="/assets/thutt.png" alt="" className='w-full'  style={{ filter: 'drop-shadow(10px 20px 20px rgba(0, 0, 0, 0.5))' }} />
-                        <p className='font-josefin'>"Cake is a happiness"
+                        <p className='font-josefin z-50'>"Cake is a happiness"
                         </p>
                     </div>
                 </div>
