@@ -76,7 +76,7 @@ ul {
   
   .example-2 .icon-content a[data-social="github"] .filled,
   .example-2 .icon-content a[data-social="github"] ~ .tooltip {
-    background-color: #24262a;
+    background-color: #0bf966;
   }
   .example-2 .icon-content a[data-social="instagram"] .filled,
   .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
@@ -92,6 +92,6 @@ ul {
   }
   .example-2 .icon-content a[data-social="youtube"] .filled,
   .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
-    background-color: #ff0000;
+    background-color: #000000;
   }
   
