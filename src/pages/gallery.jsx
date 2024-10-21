@@ -1,31 +1,31 @@
 import React from 'react';
-import Footer from './footer';
+
 
 const catalogItems = [
     {
         name: "Caramel cakes with cream vanilla",
         price: "$180.00",
-        imageUrl: "https://handletheheat.com/wp-content/uploads/2015/03/Best-Birthday-Cake-with-milk-chocolate-buttercream-SQUARE.jpg"
+        imageUrl: "/assets/boy6.jpeg"
     },
     {
         name: "Coffee cakes with coffe buttercream",
         price: "$150.00",
-        imageUrl: "https://assets.winni.in/product/primary/2023/8/88014.jpeg?dpr=2&w=220"
+        imageUrl: "/assets/boy7.jpeg"
     },
     {
         name: "Vanilla sponge cake with strawberry filling and vanilla buttercream",
         price: "$142.00",
-        imageUrl: "https://stylesweet.com/wp-content/uploads/2022/06/DripBestButterCake_Featured.jpg"
+        imageUrl: "/assets/boy2.jpg"
     },
     {
         name: "Choco cakes with vanilla buttercream",
         price: "$128.00",
-        imageUrl: "https://whipped.in/cdn/shop/products/zyro-image_34_1000x.jpg?v=1687334977"
+        imageUrl: "/assets/boy3.jpg"
     },
     {
         name: "Choco cake with strawberry buttercream",
         price: "$132.00",
-        imageUrl: "https://d3cif2hu95s88v.cloudfront.net/blog/wp-content/uploads/2021/04/07060232/Cake-made-with-Kit-Kats.jpg"
+        imageUrl: "/assets/boy5.jpeg"
     },
 ];
 
@@ -39,13 +39,13 @@ export default function Gallery() {
                         <img
                             src={item.imageUrl}
                             alt={item.name}
-                            className={`w-full object-cover ${index === 2 ? 'h-48 lg:h-full' : 'h-48'}`}
+                            className={`w-full ${index === 2 ? 'h-64 lg:h-[25.5rem] object-cover ' : 'h-48 object-cover'}`}
                         />
                         {/* Removed the <div> containing name and price */}
                     </div>
                 ))}
             </div>
-            <Footer />
+         
         </div>
     );
 }

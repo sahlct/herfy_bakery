@@ -38,7 +38,8 @@ export default function CakeTouch() {
 
             <div className='w-full h-full flex flex-col-reverse md:flex-row' style={{ backdropFilter: 'blur(2px)' }}>
                 {/* Form Section */}
-                <form action="" className="w-full md:w-1/2 h-full px-10 py-10 flex flex-col">
+                <div className='w-full md:w-1/2 h-full flex justify-center md:py-10 md:ps-20 px-10 md:px-0'>
+                <form action="" className=" flex flex-col">
                     <h1 className='font-lato text-2xl font-bold mb-5 mt-5 md:mt-0'>Get in Touch</h1>
                     <p className='text-base font-light text-start mb-5'>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus unde alias distinctio explicabo vitae dolores expedita dicta, illo doloribus reiciendis vel asperiores commodi dolore sunt, sit porro eum eius in?
@@ -61,16 +62,36 @@ export default function CakeTouch() {
                         ORDER NOW
                     </button>
                 </form>
+                </div>
 
                 {/* Gallery Section */}
                 <div className="gallery w-full min-h-[250px] md:w-1/2 flex justify-center items-center md:px-10 px-5 py-10 !m-0">
-                    <div className='bg-amber-100 lg:h-[400px] lg:w-[400px] shadow-lg' style={{ borderRadius: '64% 36% 37% 63% / 35% 65% 35% 65%' }}></div>
-                    <div className='half-border-box absolute lg:h-[400px] lg:w-[400px] w-[300px] h-[250px] flex flex-col justify-center items-center'>
-                        <img src="/assets/thutt.png" alt="" className='w-full'  style={{ filter: 'drop-shadow(10px 20px 20px rgba(0, 0, 0, 0.5))' }} />
-                        <p className='font-josefin z-50'>"Cake is a happiness"
+                    {/* Decorative background */}
+                    <div className='bg-amber-100 lg:h-[380px] lg:w-[380px] h-[320px] w-[300px] shadow-lg rounded-[50px] flex justify-center items-center flex-col'
+                       >
+                          {/* Video element */}
+                          <video
+                            src="/assets/video1.mp4"
+                            className='w-full object-contain rounded-3xl max-w-[250px]'
+                            style={{ filter: 'drop-shadow(10px 20px 20px rgba(0, 0, 0, 0.5))' }}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        ></video>
+
+                        {/* Caption text */}
+                        <p className='font-josefin z-50 mt-5 md:text-lg text-sm'>
+                            "Have Herfy Sweet Cake"
                         </p>
                     </div>
+
+                    {/* Video container */}
+                    {/* <div className='half-border-box absolute lg:h-[400px] lg:w-[400px] w-[300px] h-[250px] flex flex-col justify-center items-center'> */}
+                      
+                    {/* </div> */}
                 </div>
+
             </div>
         </div>
     );

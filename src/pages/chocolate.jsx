@@ -25,21 +25,21 @@ export default function Chocolate() {
     return loading ? (
       // Placeholder with shimmer effect
       <div
-        className="shimmer rounded-lg"
-        style={{ width: "400px", height: "400px", objectFit: "cover" }}
+        className="shimmer rounded-lg md:w-[400px] w-[300px] md:h-[400px] h-[250px] object-cover"
+        // style={{ width: "400px", height: "400px", objectFit: "cover" }}
       ></div>
     ) : (
       <img
-        className="md:rounded-lg"
+        className="md:rounded-lg md:w-[400px] w-[300px] md:h-[400px] h-[250px] object-cover"
         src={item.itemImageSrc}
         alt={item.alt}
-        style={{ width: "400px", height: "400px", objectFit: "cover" }}
+        // style={{ width: "400px", height: "400px", objectFit: "cover" }}
       />
     );
   };
 
   return (
-    <div className="w-full flex flex-col md:flex-row mt-10">
+    <div className="w-full flex flex-col md:flex-row md:mt-10">
       <div className="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0">
         <Galleria
           value={images}
@@ -69,9 +69,9 @@ export default function Chocolate() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
           eum distinctio corrupti nostrum deserunt esse fugit error quo?
         </p>
-        <button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
+        <a href="https://wa.me/919745956330"><button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
           ORDER NOW
-        </button>
+        </button></a>
       </div>
     </div>
   );

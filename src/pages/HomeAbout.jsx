@@ -16,23 +16,26 @@ export default function HomeAbout() {
       case 'Our Story':
         return (
           <div className='w-full flex flex-col md:flex-row'>
-            <div className='w-full md:w-1/2 relative'>
-              {imageLoading.story && (
-                <div className="w-full h-[300px] md:h-[400px] bg-gray-200 animate-pulse rounded-lg"></div>
-              )}
-              <img
-                src="https://piktochart.com/wp-content/uploads/2023/05/large-272.jpg"
-                alt="Our Story"
-                className={`w-full h-auto object-cover px-10 transition-opacity duration-500 ${
-                  imageLoading.story ? 'opacity-0' : 'opacity-100'
-                }`}
-                onLoad={() => handleImageLoad('story')}
-              />
+            <div className='w-full md:w-1/2 relative flex justify-center'>
+              <div className="relative w-full md:h-[350px] max-w-[350px] px-10">
+                {imageLoading.story && (
+                  <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg"></div>
+                )}
+                <img
+                  src="/assets/iso.jpg"
+                  alt="Our Story"
+                  className={`w-full h-full object-cover transition-opacity duration-500 shadow-xl ${
+                    imageLoading.story ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  onLoad={() => handleImageLoad('story')}
+                />
+              </div>
             </div>
             <div className='w-full md:w-1/2 flex justify-center items-center flex-col p-4 md:p-10'>
-              <h1 className='text-xl md:text-2xl mb-6 font-bold'>Since From 1790</h1>
+              <h1 className='text-xl md:text-2xl mb-6 font-bold'>
+                ISO 22000:2018 Certified for Premium Quality and Food Safety</h1>
               <p className='text-center leading-relaxed font-lato'>
-                At Herfy Bakery, our journey began with a simple dream: to create sponge cakes that are not only delicious but also bring a smile to everyone who tastes them. With a focus on quality and tradition, we use only the finest ingredients and time-tested recipes to ensure every bite is perfect.
+                Herfy Bakery is proud to be ISO 22000:2018 certified, ensuring the highest standards in food safety management. Specializing in the manufacturing and distribution of premium bakery products, including cakes, sweets, and snacks, we are committed to delivering quality and excellence in every bite. Trust in our certified expertise for safe, delicious, and meticulously crafted baked goods.
               </p>
             </div>
           </div>
@@ -40,23 +43,25 @@ export default function HomeAbout() {
       case 'Commitments':
         return (
           <div className='w-full flex flex-col md:flex-row'>
-            <div className='w-full md:w-1/2 relative'>
-              {imageLoading.commitments && (
-                <div className="w-full h-[300px] md:h-[400px] bg-gray-200 animate-pulse rounded-lg"></div>
-              )}
-              <img
-                src="https://cdn-ghkoj.nitrocdn.com/kjYfdEBKRwdYwvHQyjaYBdTGFpFGjqYW/assets/images/optimized/rev-39d8e95/sertifier.com/blog/wp-content/uploads/2020/10/certificate-text-samples.jpg"
-                alt="Commitments"
-                className={`w-full h-auto object-cover px-10 transition-opacity duration-500 ${
-                  imageLoading.commitments ? 'opacity-0' : 'opacity-100'
-                }`}
-                onLoad={() => handleImageLoad('commitments')}
-              />
+            <div className='w-full md:w-1/2 relative flex justify-center'>
+              <div className="relative w-full md:h-[350px] max-w-[350px] px-10">
+                {imageLoading.commitments && (
+                  <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg"></div>
+                )}
+                <img
+                  src="/assets/haccp.jpg"
+                  alt="Commitments"
+                  className={`w-full h-full object-cover transition-opacity duration-500 shadow-xl ${
+                    imageLoading.commitments ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  onLoad={() => handleImageLoad('commitments')}
+                />
+              </div>
             </div>
             <div className='w-full md:w-1/2 flex justify-center items-center flex-col p-4 md:p-10'>
-              <h1 className='text-xl md:text-2xl mb-6 font-bold'>Obligations</h1>
+              <h1 className='text-xl md:text-2xl mb-6 font-bold'>HACCP Certified for Superior Food Safety in Cake and Bakery Products</h1>
               <p className='text-center leading-relaxed font-lato'>
-                We believe in the magic of baking. From the moment you step into our bakery to the time you savor your first bite, we aim to provide an experience that is both delightful and memorable. Our team of skilled bakers works tirelessly to maintain the highest standards of excellence, ensuring that every cake we produce meets our stringent quality criteria.
+                Herfy Bakery is proud to be HACCP certified, demonstrating our commitment to maintaining the highest food safety standards. Specializing in the production of cakes, sweets, and other bakery products, we ensure that every item meets strict hazard control measures for safe and delicious products. Trust in Herfy Bakery for premium quality and certified food safety excellence.
               </p>
             </div>
           </div>
@@ -64,23 +69,25 @@ export default function HomeAbout() {
       case 'Why Choose Us':
         return (
           <div className='w-full flex flex-col md:flex-row'>
-            <div className='w-full md:w-1/2 relative'>
-              {imageLoading.chooseUs && (
-                <div className="w-full h-[300px] md:h-[400px] bg-gray-200 animate-pulse rounded-lg"></div>
-              )}
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS15MltYgHa8uF-3GMyckQ8wTHk8TQqAQIYuA&s"
-                alt="Why Choose Us"
-                className={`w-full h-auto object-cover px-10 transition-opacity duration-500 ${
-                  imageLoading.chooseUs ? 'opacity-0' : 'opacity-100'
-                }`}
-                onLoad={() => handleImageLoad('chooseUs')}
-              />
+            <div className='w-full md:w-1/2 relative flex justify-center'>
+              <div className="relative w-full md:h-[350px] max-w-[350px] px-10">
+                {imageLoading.chooseUs && (
+                  <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg"></div>
+                )}
+                <img
+                  src="/assets/whogmp.jpg"
+                  alt="Why Choose Us"
+                  className={`w-full h-full object-cover transition-opacity duration-500 shadow-xl ${
+                    imageLoading.chooseUs ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  onLoad={() => handleImageLoad('chooseUs')}
+                />
+              </div>
             </div>
             <div className='w-full md:w-1/2 flex justify-center items-center flex-col p-4 md:p-10'>
-              <h1 className='text-xl md:text-2xl mb-6 font-bold'>Why We're Your Best Option?</h1>
+              <h1 className='text-xl md:text-2xl mb-6 font-bold'>Premium Quality Bakery Products with WHO-GMP Certification</h1>
               <p className='text-center leading-relaxed font-lato'>
-                We source only the best ingredients, ensuring the freshest and most flavorful sponge cakes. Our expert bakers are passionate and experienced, dedicated to perfecting the art of sponge cake baking. Whether you need cakes for a special event or a regular supply for your business, we offer customization to meet your specific needs. Your satisfaction is our top priority, and we strive to exceed your expectations with every order.
+                At Herfy Bakery, we take pride in producing top-notch cakes, snacks, and savory treats while adhering to the highest international standards. With our WHO-GMP certification, we ensure that every product is crafted under stringent quality controls, reflecting our commitment to excellence, safety, and customer satisfaction. Trust us for baked goods that are not only delicious but also produced with the utmost care and compliance.
               </p>
             </div>
           </div>
@@ -96,24 +103,24 @@ export default function HomeAbout() {
       <p className="md:text-lg text-base mb-10">PASSION WITH FLOUR</p>
 
       <div className="sinceContainer w-full">
-        <div className="buttons flex sm:justify-center justify-start space-x-4 overflow-x-auto scrollbar-hidden">
+        <div className="buttons flex sm:justify-center justify-start space-x-4 overflow-x-auto scrollbar-hidden mb-3 md:mb-0">
           <button
             className={`py-1 px-4 text-xl md:text-2xl md:font-bold ms-0 whitespace-nowrap ${activeTab === 'Our Story' ? ' text-yellow-500 ' : 'text-gray-500'}`}
             onClick={() => setActiveTab('Our Story')}
           >
-            Achievements
+            ISO
           </button>
           <button
             className={`py-1 px-4 text-xl md:text-2xl !ms-0 md:font-bold whitespace-nowrap ${activeTab === 'Commitments' ? ' text-yellow-500 ' : 'text-gray-500'}`}
             onClick={() => setActiveTab('Commitments')}
           >
-            Moments
+            HACCP
           </button>
           <button
             className={`py-1 px-4 text-xl md:text-2xl !ms-0 md:font-bold whitespace-nowrap ${activeTab === 'Why Choose Us' ? ' text-yellow-500 ' : 'text-gray-500'}`}
             onClick={() => setActiveTab('Why Choose Us')}
           >
-            Stars
+            WHO-GMP
           </button>
         </div>
 

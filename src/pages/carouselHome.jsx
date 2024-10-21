@@ -69,9 +69,9 @@ const Carousel = () => {
               <h2 className="font-semibold mb-1 font-josefin">EVERY DAY WE MAKE</h2>
               <h1 className="md:text-4xl text-3xl font-semibold mb-2">Freshly Baked Bread</h1>
               <p className="text-gray-700">{cakes[0].text}</p>
-              <button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
+              <a href="https://wa.me/919745956330"><button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
                 ORDER NOW
-              </button>
+              </button></a>
             </div>
           </>
         ) : (
@@ -80,9 +80,9 @@ const Carousel = () => {
               <h2 className="font-semibold mb-1 font-josefin">EVERY DAY WE MAKE</h2>
               <h1 className="md:text-4xl text-3xl font-semibold mb-2">Freshly Baked Bread</h1>
               <p className="text-gray-700">{cakes[1].text}</p>
-              <button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
+              <a href="https://wa.me/919745956330"><button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
                 ORDER NOW
-              </button>
+              </button></a>
             </div>
             {renderImageWithSkeleton(cakes[1].image, 'Cake 2', 1)}
           </>
