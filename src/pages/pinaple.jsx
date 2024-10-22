@@ -1,57 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { Galleria } from "primereact/galleria";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
+import React, { useState } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Card, CardContent } from "../ui/card";
 
 export default function Pinapple() {
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
-
-  useEffect(() => {
-    setImages([
-      { itemImageSrc: "/assets/IMG_9634.JPG", alt: "Cake 1" },
-      { itemImageSrc: "/assets/IMG_9618.JPG", alt: "Cake 2" },
-      { itemImageSrc: "/assets/IMG_9624.JPG", alt: "Cake 3" },
-      { itemImageSrc: "/assets/IMG_9641.JPG", alt: "Cake 4" },
-    ]);
-
-    // Simulate image loading delay
-    const timer = setTimeout(() => setLoading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const itemTemplate = (item) => {
-    return loading ? (
-      // Placeholder with shimmer effect
-      <div
-        className="shimmer rounded-lg md:w-[400px] w-[300px] md:h-[400px] h-[250px] object-cover"
-      // style={{ width: "400px", height: "400px", objectFit: "cover" }}
-      ></div>
-    ) : (
-      <img
-        className="md:rounded-lg md:w-[400px] w-[300px] md:h-[400px] h-[250px] object-cover"
-        src={item.itemImageSrc}
-        alt={item.alt}
-      // style={{ width: "400px", height: "400px", objectFit: "cover" }}
-      />
-    );
-  };
+  const [images] = useState([
+    { itemImageSrc: "/assets/IMG_9634.JPG", alt: "Cake 1" },
+    { itemImageSrc: "/assets/IMG_9618.JPG", alt: "Cake 2" },
+    { itemImageSrc: "/assets/IMG_9624.JPG", alt: "Cake 3" },
+    { itemImageSrc: "/assets/IMG_9641.JPG", alt: "Cake 4" },
+  ]);
 
   return (
     <div className="w-full flex flex-col md:flex-row md:mt-10">
+      {/* Carousel Section */}
       <div className="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0">
-        <Galleria
-          value={images}
-          numVisible={1}
-          circular
-          style={{ maxWidth: "400px" }}
-          showThumbnails={false}
-          showItemNavigators
-          item={itemTemplate}
-        />
+        <Carousel className="w-full max-w-xs">
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-center justify-center p-1">
+                      <img
+                        className="md:rounded-lg md:w-[400px] w-[300px] md:h-[400px] h-[300px] object-cover"
+                        src={image.itemImageSrc}
+                        alt={image.alt}
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
 
+      {/* Text Section */}
       <div className="w-full md:w-1/2 flex flex-col px-5 md:px-20">
         <h1
           className="md:mb-10 mb-5 text-left font-bold md:font-normal"
@@ -69,9 +55,11 @@ export default function Pinapple() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
           eum distinctio corrupti nostrum deserunt esse fugit error quo?
         </p>
-        <a href="https://wa.me/919745956330"><button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
-          ORDER NOW
-        </button></a>
+        <a href="https://wa.me/919745956330">
+          <button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">
+            ORDER NOW
+          </button>
+        </a>
       </div>
     </div>
   );
