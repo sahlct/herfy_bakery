@@ -58,9 +58,9 @@ export default function CakeTouch() {
                         placeholder="Message"
                         className="mb-3 p-2 border border-gray-300 rounded bg-gray-100"
                     ></textarea>
-                    <button className="py-1 self-center rounded-full w-[150px] border-yellow-500 border mt-5 hover:bg-yellow-500 hover:text-white shadow-lg bg-gray-200">
+                    <a href="https://wa.me/919745956330"><button className="py-1 self-center rounded-full w-[150px] border-yellow-500 border mt-5 hover:bg-yellow-500 hover:text-white shadow-lg bg-gray-200">
                         ORDER NOW
-                    </button>
+                    </button></a>
                 </form>
                 </div>
 

@@ -21,9 +21,9 @@ export default function WhyChoose() {
           <p className="text-gray-500 mb-4">
             We make ordering bread - just a few clicks and you're done. Experience the simplicity of our online bakery service.
           </p>
-          <p className="text-blue-500 hover:underline">
-            Read more
-          </p>
+          <a href="https://wa.me/919745956330"><p className="text-blue-500 hover:underline">
+           contact us
+          </p></a>
         </div>
 
         {/* Card 2 */}
@@ -36,9 +36,9 @@ export default function WhyChoose() {
           <p className="text-gray-500 mb-4">
             Fresh from our ovens to your door in record time. We pride ourselves on swift, reliable delivery service.
           </p>
-          <p className="text-blue-500 hover:underline">
-            Read more
-          </p>
+          <a href="https://wa.me/919745956330"><p className="text-blue-500 hover:underline">
+           contact us
+          </p></a>
         </div>
 
         {/* Card 3 */}
@@ -51,9 +51,9 @@ export default function WhyChoose() {
           <p className="text-gray-500 mb-4">
             Quality is our promise. Every loaf undergoes thorough testing to ensure you get nothing but the best in best.
           </p>
-          <p className="text-blue-500 hover:underline">
-            Read more
-          </p>
+          <a href="https://wa.me/919745956330"><p className="text-blue-500 hover:underline">
+           contact us
+          </p></a>
         </div>
 
       </div>
