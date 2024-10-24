@@ -14,7 +14,7 @@ export default function Pinapple() {
     <div className="w-full flex flex-col md:flex-row md:mt-10">
       {/* Carousel Section */}
       <div className="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0">
-        <Carousel className="w-full max-w-xs">
+        <Carousel className="w-full max-w-xs" onTouchStart={(e) => e.stopPropagation()}>
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
@@ -22,7 +22,7 @@ export default function Pinapple() {
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-1">
                       <img
-                        className="md:rounded-lg md:w-[400px] w-[300px] md:h-[400px] h-[300px] object-cover"
+                        className="md:rounded-lg md:w-[400px] w-[300px] md:h-[400px] h-[300px] object-cover will-change-transform"
                         src={image.itemImageSrc}
                         alt={image.alt}
                       />
@@ -46,14 +46,10 @@ export default function Pinapple() {
           Pinapple Sponge Cake
         </h1>
         <p className="text-left mb-2">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
-          adipisci, harum assumenda eligendi nam perferendis unde id quam eius,
-          sequi necessitatibus obcaecati inventore fugit dignissimos
-          consequuntur! Ipsum eos asperiores numquam.
+          Savor the tropical delight of our pineapple sponge cake, where every bite transports you to paradise. Made with fresh, juicy pineapples and a light, airy sponge, this cake is a perfect blend of sweetness and tang. Each slice is expertly layered with velvety cream, creating a luscious texture that melts in your mouth. Ideal for birthdays, celebrations, or any occasion, it's a refreshing treat that brightens your day.
         </p>
         <p className="text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-          eum distinctio corrupti nostrum deserunt esse fugit error quo?
+          Our pineapple sponge cake is not just a dessert; it's an experience of sunshine and joy. Taste the essence of the tropics in every delicious slice!
         </p>
         <a href="https://wa.me/919745956330">
           <button className="py-1 rounded-full md:w-[150px] w-[130px] border-yellow-500 border md:mt-10 mt-5 hover:bg-yellow-500 hover:text-white shadow-lg">

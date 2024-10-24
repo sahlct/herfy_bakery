@@ -14,9 +14,9 @@ export default function HomePage() {
     <div className='bg-[#f9f4ea] md:mt-24 mt-10'>
 
       <Carousel />
-      <HomeAbout />
-      <WhyChoose />
       <BreadOfTheDay />
+      <WhyChoose />
+      <HomeAbout />
       <CakeTouch />
       <Footer />
     </div>

@@ -42,7 +42,7 @@ export default function CakeTouch() {
                 <form action="" className=" flex flex-col">
                     <h1 className='font-lato text-2xl font-bold mb-5 mt-5 md:mt-0'>Get in Touch</h1>
                     <p className='text-base font-light text-start mb-5'>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus unde alias distinctio explicabo vitae dolores expedita dicta, illo doloribus reiciendis vel asperiores commodi dolore sunt, sit porro eum eius in?
+                    We'd love to hear from you! Reach out to us for inquiries, feedback, or assistance, and we'll respond promptly.
                     </p>
                     <input
                         type="text"

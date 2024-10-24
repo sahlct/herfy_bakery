@@ -1,49 +1,28 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { IconVolume, IconVolumeOff, IconPlayerPlay, IconPlayerPause, IconPlayerSkipBack, IconPlayerSkipForward } from '@tabler/icons-react';
 
-const VideoPlayer = ({ src, isGlobalPlaying, setGlobalPlaying, globalMuted, setGlobalMuted, isMuted, toggleMute }) => {
-  const [isPlaying, setIsPlaying] = useState(true);
+const VideoPlayer = ({ src, isPlaying, togglePlay, isMuted, toggleMute }) => {
   const videoRef = useRef(null);
 
+  // Play or pause the video based on the prop
   useEffect(() => {
-    if (isGlobalPlaying && videoRef.current) {
-      videoRef.current.play();
-    } else if (videoRef.current) {
-      videoRef.current.pause();
+    if (videoRef.current) {
+      isPlaying ? videoRef.current.play() : videoRef.current.pause();
     }
-    setIsPlaying(isGlobalPlaying);
-  }, [isGlobalPlaying]);
+  }, [isPlaying]);
 
+  // Set mute state
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.muted = isMuted;
     }
   }, [isMuted]);
 
-  const togglePlay = () => {
-    setGlobalPlaying(!isGlobalPlaying);
-  };
-
   const skip = (seconds) => {
     if (videoRef.current) {
       videoRef.current.currentTime += seconds;
     }
   };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    const handleEnded = () => setIsPlaying(false);
-    
-    if (video) {
-      video.addEventListener('ended', handleEnded);
-    }
-    
-    return () => {
-      if (video) {
-        video.removeEventListener('ended', handleEnded);
-      }
-    };
-  }, []);
 
   return (
     <div className="relative w-full pb-[177.78%]"> {/* 9:16 aspect ratio */}
@@ -76,16 +55,30 @@ const VideoPlayer = ({ src, isGlobalPlaying, setGlobalPlaying, globalMuted, setG
 };
 
 export default function MediaData() {
-  const [isGlobalPlaying, setGlobalPlaying] = useState(true);
-  const [globalMutedIndex, setGlobalMutedIndex] = useState(null);
-  const videos = [
+  const [videos] = useState([
     '/assets/video2.mp4',
     '/assets/video3.mp4',
     '/assets/video4.mp4'
-  ];
+  ]);
+
+  // Initialize all videos as playing and muted
+  const [playingStates, setPlayingStates] = useState(Array(videos.length).fill(true)); // Start with all videos playing
+  const [mutedStates, setMutedStates] = useState(Array(videos.length).fill(true)); // Start with all videos muted
 
   const toggleMute = (index) => {
-    setGlobalMutedIndex((prevIndex) => (prevIndex === index ? null : index)); // Unmute clicked video, mute others
+    setMutedStates(prev => {
+      const newMutedStates = [...prev];
+      newMutedStates[index] = !newMutedStates[index]; // Toggle mute for clicked video
+      return newMutedStates;
+    });
+  };
+
+  const togglePlay = (index) => {
+    setPlayingStates(prev => {
+      const newPlayingStates = [...prev];
+      newPlayingStates[index] = !newPlayingStates[index]; // Toggle play for clicked video
+      return newPlayingStates;
+    });
   };
 
   return (
@@ -96,10 +89,10 @@ export default function MediaData() {
           <VideoPlayer 
             key={index} 
             src={video} 
-            isGlobalPlaying={isGlobalPlaying}
-            setGlobalPlaying={setGlobalPlaying}
-            isMuted={globalMutedIndex !== index} // Only unmute the clicked video
-            toggleMute={() => toggleMute(index)}
+            isPlaying={playingStates[index]} // Pass individual play state
+            togglePlay={() => togglePlay(index)} // Pass toggle function for individual video
+            isMuted={mutedStates[index]} // Pass individual mute state
+            toggleMute={() => toggleMute(index)} // Pass toggle function for individual video
           />
         ))}
       </div>

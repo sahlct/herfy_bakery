@@ -48,7 +48,7 @@ export default function Footer() {
             <p className='text-gray-400 md:text-sm text-xs mt-5'>Herfy Products <span className='text-yellow-500'>||</span> Eranippadi, Kannamangalam(po) <span className='text-yellow-500'>||</span> Vengara, Malappuram</p>
             <p className='text-gray-400 md:text-sm text-xs'>tel: 0494-2494313 <span className='text-yellow-500'>||</span> Call : +91 9745956330</p>
             {/* <hr className='text-white'/> */}
-            <p className='text-gray-400 text-xs md:pt-10 pt-5 pb-2 md:pb-5'>copyright alright reserved @ herfybakery@gmail.com</p>
+            <p className='text-gray-400 text-xs md:pt-10 pt-5 pb-2 md:pb-5'>copyright alright reserved @ herfybakery.com</p>
         </div>
     )
 }

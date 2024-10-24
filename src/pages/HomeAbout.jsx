@@ -33,7 +33,7 @@ export default function HomeAbout() {
             </div>
             <div className='w-full md:w-1/2 flex justify-center items-center flex-col p-4 md:p-10'>
               <h1 className='text-xl md:text-2xl mb-6 font-bold'>
-                ISO 22000:2018 Certified for Premium Quality and Food Safety</h1>
+                ISO : Food Safety Management System </h1>
               <p className='text-center leading-relaxed font-lato'>
                 Herfy Bakery is proud to be ISO 22000:2018 certified, ensuring the highest standards in food safety management. Specializing in the manufacturing and distribution of premium bakery products, including cakes, sweets, and snacks, we are committed to delivering quality and excellence in every bite. Trust in our certified expertise for safe, delicious, and meticulously crafted baked goods.
               </p>
@@ -59,7 +59,7 @@ export default function HomeAbout() {
               </div>
             </div>
             <div className='w-full md:w-1/2 flex justify-center items-center flex-col p-4 md:p-10'>
-              <h1 className='text-xl md:text-2xl mb-6 font-bold'>HACCP Certified for Superior Food Safety in Cake and Bakery Products</h1>
+              <h1 className='text-xl md:text-2xl mb-6 font-bold'>Hazard Analysis & Critical Control Point</h1>
               <p className='text-center leading-relaxed font-lato'>
                 Herfy Bakery is proud to be HACCP certified, demonstrating our commitment to maintaining the highest food safety standards. Specializing in the production of cakes, sweets, and other bakery products, we ensure that every item meets strict hazard control measures for safe and delicious products. Trust in Herfy Bakery for premium quality and certified food safety excellence.
               </p>
